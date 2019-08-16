@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Characters
+    body
+        table(border=1)
+            tr
+                th Name
+                th Race
+                th Class
+                th Actions
+            each char in chars
+                tr
+                    td= char.name
+                    td= char.race
+                    td= char.class
+                    td
+                        a(href='/remove/' + char._id) 
+                            button &times;
+
+        fieldset
+            legend Character Creator
+            form(action="/char" method="post")
+                p Name:&nbsp;
+                    input(type="text" name="name")
+                p Race:&nbsp;
+                    input(type="text" name="race")
+                p Class:&nbsp;
+                    select(name="class")
+                        option Cartoon
+                        option Video Game
+                        option Movie
+                button(type="submit") Create
