@@ -4,10 +4,8 @@ const express = require("express"),
           app = express(),
          port = 8000;
 
- app.use(express.static(__dirname + "/static"));
-app.set('view engine', 'pug');
-app.set('views', __dirname + '/views');
-app.use(bp.urlencoded({ extended: true }));
+//  app.use(express.static(__dirname + "/static"));
+app.use(bp.json());
 
  mongoose.connect("mongodb://localhost/chars");
 
